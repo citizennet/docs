@@ -1,0 +1,82 @@
+.docs-stuffs .docs-nav {
+  margin-top: 30px;
+  border-bottom: 3px solid #DFE0E5;
+  padding-bottom: 10px; }
+  .docs-stuffs .docs-nav .nav-pills .active > a {
+    background-color: #24A9D1; }
+  .docs-stuffs .docs-nav .nav-pills a:hover {
+    background-color: #DFE0E5; }
+.docs-stuffs h1, .docs-stuffs h2, .docs-stuffs h3 {
+  font-weight: 400; }
+.docs-stuffs h1 {
+  font-family: 'Gotham SSm A', 'Gotham SSm B', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  margin-top: 60px;
+  border-top: 2px solid #DFE0E5;
+  padding-top: 35px;
+  color: #24A9D1; }
+  .docs-stuffs h1:first-child {
+    border: none;
+    padding-top: 0; }
+.docs-stuffs h2 {
+  font-size: 22px;
+  margin: 45px 0 15px; }
+.docs-stuffs h1 + h2 {
+  margin-top: 0; }
+.docs-stuffs h3 {
+  font-size: 18px;
+  margin: 35px 0 15px; }
+.docs-stuffs h5 {
+  padding: 5px;
+  background-color: #969496; }
+  .docs-stuffs h5 code {
+    text-transform: uppercase;
+    background-color: #24A9D1;
+    color: #FFF;
+    margin-right: 15px; }
+  .docs-stuffs h5 em {
+    color: #E4E4E4;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 1px; }
+.docs-stuffs h6 {
+  padding: 5px;
+  background-color: #DFE0E5;
+  color: #716C74;
+  font-weight: 300;
+  margin-bottom: 25px; }
+.docs-stuffs strong {
+  font-weight: 500; }
+.docs-stuffs a {
+  color: #24A9D1; }
+.docs-stuffs section {
+  font-weight: 300;
+  margin: 35px 0; }
+.docs-stuffs p {
+  font-size: 14px;
+  color: #716C74;
+  font-weight: 300; }
+.docs-stuffs blockquote {
+  background-color: #DFE0E5;
+  border-radius: 5px; }
+.docs-stuffs code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #716C74;
+  background-color: #D5D8DB;
+  border-radius: 0;
+  font-family: monospace; }
+.docs-stuffs pre {
+  background-color: #4D4D4D;
+  margin-bottom: 25px; }
+  .docs-stuffs pre code {
+    color: #F2E8E8;
+    background-color: transparent; }
+.docs-stuffs ul {
+  margin-bottom: 25px; }
+  .docs-stuffs ul li {
+    color: #716C74;
+    font-weight: 300;
+    font-size: 14px; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,11 @@
+<div class="docs-nav">
+
+  <ul class="nav nav-pills" role="tablist">
+    <li role="presentation"
+        ng-repeat="section in vm.sections"
+        ng-class="{active: section == vm.selectedSection}">
+      <a ui-sref="docs-section({section: section})">{{section|uppercase}}</a>
+    </li>
+  </ul>
+
+</div>
