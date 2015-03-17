@@ -1694,23 +1694,55 @@ Optional
 
 ### Publish Page Posts
 
-##### `POST` _/api/posts/publish_
+##### `POST` _/posts/publish_
 
-* `campaignId` - campaign that will use the post
+Required Fields:
+
 * `pageId`- publish post to this facebook page id
-* `type` - page post type (link,photo,video)
-* `callToAction` - json encoded call to action
+* `campaignId` - campaign that has access to publish posts on the above pageId
+* `type` - page post type
+    - link
+    - photo
+    - video
+    - mobile-install
+    - mobile-engagement
+    - desktop-install
+    - desktop-engagement
+    - status
+
 * `message` - message text for the page post
-* `media` - picture url to upload
+
+Notes:
+* `callToAction` - specific action call to action JSON (must have a "type" and "value" keys)
+* `media` - image /video url not needed for _status_ posts, required for all other types.
+* `scheduledPublishTime` - schedule posts for a later time.
+* `targeting` - JSON containing targeting spec.
+* `thumbnail` - Thumbnail image if required.
+* `childAttachments` - Required for _multi-product_ posts
+
+Example :
+
+    [
+        {
+            "link": "http://lskdjf.com",
+            "name": "name",
+            "picture": "http://local.wildcat/uploads/1c91c50f962b0b97cb5ebf9ce3964e82.jpeg"
+        },
+        {
+            "link": "http://asdfsadf.com",
+            "name": "lame hipster",
+            "picture": "http://local.wildcat/uploads/b38e8c6b913eae2ed554e932f3763e22.jpeg"
+        }
+    ]
 
 Optional
 
 * `published` - create a published/unpublished post (default unpublished)
-* `thumbnail` - for video posts ( not supported)
+* `thumbnail` - for video post
 
 ### Refresh Page Posts
 
-##### `POST` _/api/posts/refresh_
+##### `POST` _/posts/refresh_
 
 * `campaignId` - campaign's access token will be used
 * `pageId` or `postId`- cache all posts from the page / cache specified post
@@ -1784,20 +1816,105 @@ Reports
 
 ##### `GET` _/reports_
 
-Retrieve reports filtered by:
+Get reports based on query parameters , Parameters are recieved in the query string.
 
-* `campaignId`
-* `companyId`
+###### Must specify atleast one of :
+
+* `campaignId` or
+* `companyId` or
 * `groupId`
 
-Optional
+###### The following parameters can be used to filter reports based on query params.
 
-`type` - any of the following types
-
+* `groupName` - Filter reports with group names like the query param.
+* `campaignName` - Filter reports with campaign names like the query param.
+* `name` - Filter reports with names like the query param.
+* `status` - Can be used to filter reports by status "new" ,"completed" and "generating".
+* `type` - Indicates type of report , can be one of the following types
    - Hunt and Refine
    - Project Mustang
    - Audience Report
    - Audience Map Report
    - Group Report
+   - CampaignIO
+   - Campaign Ad Report
+   - Campaign Performance Report
 
-`paging` - Paging is disabled by default
+###### Additional Features:
+
+* `paging` - Paging is disabled by default. Refer to paging documentation for more details.
+* `orderBy` - Indicates the column on which to sort on . After processing initial sort , reports are also sorted by report.updated_at DESC to show recent reports first.
+* `orderDirection` - Indicates the direction of the sort "asc" or "desc". If orderBy is passed in defaults to ascending.
+* `name` - Report name can be genralized for specific `types` using templates , refer to report_location table. If there are no templates , defaults to name on disk with underscores.
+
+###### Example :
+
+    [
+    {
+        "status": "completed",
+        "typeId": 1,
+        "generatedBy": "ml",
+        "campaignId": 10,
+        "campaignName": "Sample Campaign",
+        "companyName": "Media Report",
+        "startDate": null,
+        "securityCode": "jbgbfloxo97n",
+        "updatedAt": "2013-10-07 09:00:33",
+        "displayName": null,
+        "id": 12345,
+        "createdAt": "2014-02-28 10:13:14",
+        "subCampaignId": null,
+        "name": "reportName.xls",
+        "extension": "xls",
+        "companyId": 33,
+        "requestedBy": null,
+        "reportSize": "9.50 KB",
+        "stopDate": null,
+        "groupId": 40365,
+        "groupName": "Sample group",
+        "location": "/home/reportName.xls",
+        "type": "Hunt and Refine",
+        "subCampaignName": null
+    }
+    ]
+
+##### `POST` _/reports_
+
+Create a new report.
+
+###### Required fields:
+
+* `companyId` or `groupid` or `campaignId`.
+* `type`
+* `status`
+
+###### Notes : 
+* Reports with status "completed" , must have a valid `type` , `name` and `extension`.
+* `name` must match file name on disk.
+* `displayName` can be used to store the name displayed to the user.
+
+Response : Created report is returned.
+
+##### `PUT` _/reports_/:id_
+
+Update an existing report.
+
+###### Required fields:
+* `id` - id of the report to be updated.
+
+Same validations for creating a report apply.
+
+Response : Updated report is returned.
+
+##### `DELETE` _/reports_/:id_
+
+Delete an existing report.
+
+###### Required fields:
+* `id` - id of the report to be updated.
+
+Response :
+
+    {
+    "status" : "success"
+    }
