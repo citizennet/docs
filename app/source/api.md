@@ -1923,6 +1923,9 @@ Response :
 Event Requests
 ==============
 
+Requests
+--------
+
 ### Getting Requests
 
 ##### `GET` _/requests/:id_
@@ -1966,3 +1969,47 @@ Gets all the requests for a user
 ##### `DELETE` _/requests/:id_
 
 ###### `200` "request has been deleted"
+
+Artists
+-------
+
+### Getting Artists
+
+##### `GET` _/requests/artists/:id_
+
+###### Returns the artist object
+
+##### `GET` _/requests/artists_
+
+Gets all the artists
+
+###### Returns a paginated list of artist objects
+
+### Creating An Artist
+
+##### `POST` _/requests/artists_
+
+###### Returns the new artist object
+
+
+### Updating An Artist
+
+##### `PUT` _/requests/artists/:id_
+
+###### Returns the updated artist object
+
+
+### Deleting An Artist
+
+##### `DELETE` _/requests/artists/:id_
+
+###### `200` "artist has been deleted"
+
+
+### Searching For An Artist
+
+##### `PUT` _/requests/artists/search_
+
+* `q` - the artist or string to search for
+
+###### Returns a maximum of 50 matching artists
