@@ -1918,3 +1918,51 @@ Response :
     {
     "status" : "success"
     }
+
+
+Event Requests
+==============
+
+### Getting Requests
+
+##### `GET` _/requests/:id_
+
+###### Returns the request object
+
+##### `GET` _/requests_
+
+Gets all the requests for a user
+
+###### Returns a paginated list of request objects
+
+
+### Creating A Request
+
+##### `POST` _/requests_
+
+* `type` - facebook, twitter
+* `campaignTypeId` - Campaign flight
+* `artistId` - Id of the campaign artist
+* `venueId` - Id of the campaign venue
+* `startDate` - start date of the campaign
+* `stopDate` - stop date of the campaign
+* `eventDate` - date of the marketing event
+* `budget` - campaign budget
+* `targeting` - JSON object of Facebook targeting
+* `includesCommission` - 1: commission included in budget, ): not included in budget
+* `additionalComments` - and addition text or notes
+
+###### Returns the new request object
+
+### Updating A Request
+
+##### `PUT` _/requests/:id_
+
+###### Returns the updated request object
+
+
+### Deleting A Request
+
+##### `DELETE` _/requests/:id_
+
+###### `200` "request has been deleted"
