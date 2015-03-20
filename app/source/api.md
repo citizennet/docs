@@ -2013,3 +2013,14 @@ Gets all the artists
 * `q` - the artist or string to search for
 
 ###### Returns a maximum of 50 matching artists
+
+
+Campaign Types
+--------------
+
+### Getting Campaign Types
+
+##### `GET` _/requests/campaignTypes_
+
+###### Returns a list of available campaign types
+
