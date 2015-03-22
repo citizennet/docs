@@ -1934,6 +1934,18 @@ Requests
 
 ##### `GET` _/requests_
 
+Filter results:
+* `type` - filter by `facebook` or `twitter`
+* `status` - filter by `requestStatusId`
+
+Request Status Ids:
+* 1 - `new`
+* 2 - `approved`
+* 3 - `created`
+* 4 - `needs creative`
+* 5 - `complete`
+* 6 - `cancelled`
+
 Gets all the requests for a user
 
 ###### Returns a paginated list of request objects
