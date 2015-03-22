@@ -1936,7 +1936,7 @@ Requests
 
 Filter results:
 * `type` - filter by `facebook` or `twitter`
-* `status` - filter by `requestStatusId`
+* `requestStatusId` - filter by `requestStatusId`
 
 Request Status Ids:
 * 1 - `new`
@@ -1945,6 +1945,8 @@ Request Status Ids:
 * 4 - `needs creative`
 * 5 - `complete`
 * 6 - `cancelled`
+
+Multiple ids may be passed: `?requestStatusId=1:3:6`
 
 Gets all the requests for a user
 
