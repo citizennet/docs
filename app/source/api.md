@@ -1996,6 +1996,48 @@ Request Users
 
 _Non admin users will only receive users within their own group._
 
+##### `GET` _/requests/users/:id_
+
+###### Returns a single user object
+
+
+Request Roles
+-------------
+
+### Adding A Role
+
+##### `POST` _/requests/users/roles_
+
+* `userId`  - user id to apply role to
+* `requestGroupId`- group id to assign user to
+* `role` - role to apply to user* 
+
+###### Returns a new roles object
+
+
+### Deleting A Role
+
+##### `DELETE` _/requests/users/roles/:id_
+
+###### `200` - "request role has been deleted"
+
+
+Request Groups
+--------------
+
+### Adding A Group
+
+##### `POST` _/requests/users/groups_
+
+* `name`  - name of the new group
+
+###### Returns a new group object
+
+### Updating A Group
+
+##### `PUT` _/requests/users/groups/:id_
+
+###### Returns the updated group object
 
 Request Artists
 ---------------
