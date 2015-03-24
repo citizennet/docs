@@ -1984,8 +1984,21 @@ Gets all the requests for a user
 
 ###### `200` "request has been deleted"
 
-Artists
--------
+
+Request Users
+-------------
+
+### Getting Users
+
+##### `GET` _/requests/users_
+
+###### Returns a list of user objects
+
+_Non admin users will only receive users within their own group._
+
+
+Request Artists
+---------------
 
 ### Getting Artists
 
@@ -2029,8 +2042,8 @@ Gets all the artists
 ###### Returns a maximum of 50 matching artists
 
 
-Campaign Types
---------------
+Request Campaign Types
+----------------------
 
 ### Getting Campaign Types
 
