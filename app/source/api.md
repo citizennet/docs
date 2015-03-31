@@ -200,6 +200,7 @@ _Admins may get users from other companies_
 ##### `POST` _/users/invite_
 
 * `email` - where to send invite
+* `defaultRoles` - list of roles to assign user
 
 ###### Returns a new user profile object
 
