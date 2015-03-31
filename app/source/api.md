@@ -1985,6 +1985,12 @@ Gets all the requests for a user
 
 ###### `200` "request has been deleted"
 
+### Getting Request Logs
+
+##### `GET` _/requests/:id/logs_
+
+###### Returns a list of JSON log objects
+
 
 Request Users
 -------------
