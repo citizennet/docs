@@ -1920,6 +1920,15 @@ Response :
     "status" : "success"
     }
 
+##### `GET` _/reports/batch_
+
+Batch download reports as a zip.Pass in params as query string.
+
+###### Required fields:
+* `reportIds` - List of ids that need to be downloaded as a zip.
+
+Response :
+* File with name Reports.zip will be downloaded, with the specified report files zipped.
 
 Event Requests
 ==============
