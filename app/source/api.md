@@ -1817,7 +1817,7 @@ Reports
 
 ##### `GET` _/reports_
 
-Get reports based on query parameters , Parameters are recieved in the query string.
+Get reports based on query parameters. Parameters are received in the query string.
 
 ###### Must specify atleast one of :
 
