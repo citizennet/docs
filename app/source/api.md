@@ -226,6 +226,16 @@ Top level container for all Facebook ad products
 
 ###### returns a company object.
 
+###### `invoicingType` - Invoicing method
+
+    `1` - Credit card.  1 invoice per campaign, charged on stripe a few days later
+
+| **Monthly**                                | 1 invoice per group | 1 invoice per company |
+|--------------------------------------------|---------------------|-----------------------|
+| **full spend of campaign ending in month** | `2`                 | `5`                   |
+| **spend of campaigns within month**        | `3`                 | `4`                   |
+
+
 
 ### Getting All Companies (_admin only_)
 
