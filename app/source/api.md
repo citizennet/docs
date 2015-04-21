@@ -1685,6 +1685,7 @@ Optional
 
 * `pageId`          - return posts from this facebook page id
 * `postUrl`         - search for posts based on a facebook page url
+* `videoId`         - return video post with this video id
 
 ###### A list of facebook page post objects
 
