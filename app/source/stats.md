@@ -194,7 +194,7 @@ Returns a specific subset of stats that includes only the fields specified.  If 
 ## Filter
 Filter results by appling an operator and value to specific field in each
 row.  Format is `field:operator:value`.  Operators can be `eq, ne, gt, gte,
-ge, lt, lte, le` on numeric values, or `strin` on string values.  Multiple
+ge, lt, lte, le` on numeric values, `strin` on string values, or `allremove` and `anyremove`, which are JSON-encoded lists removing entries that match all or any of the listed values.  Multiple
 filter values will all be used.
 
     ?filter=impressions:gt:3000
