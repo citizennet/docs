@@ -2138,6 +2138,8 @@ All endpoints will have this format:
 
 ##### `GET` _/backend/schemas/request_
 
+* `requestIds`
+
 Return the event request schema form.
 
 ### Campaign General Schema Form
@@ -2152,7 +2154,7 @@ Return the campaign general schema form.
 
 ##### `GET` _/backend/schemas/campaign/targeting_
 
-* `campaignId`
+* `campaignIds`
 
 Return the campaign targeting schema form.
 
