@@ -2128,7 +2128,9 @@ All endpoints will have this format:
 
     {
       "data": {}, 
-      "form": [], 
+      "forms": [{"type": "form", 
+                 "key": <page>, 
+                 "form": []}], 
       "schema": {"properties": {}, 
                  "required": []}, 
       "params": {}
