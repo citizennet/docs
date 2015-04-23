@@ -2120,3 +2120,51 @@ Request Campaign Types
 
 ###### Returns a list of available campaign types
 
+
+Schema Forms
+----------------------
+
+All endpoints will have this format:
+
+    {
+      "data": {}, 
+      "form": [], 
+      "schema": {"properties": {}, 
+                 "required": []}, 
+      "params": {}
+    }
+
+### Event Request Schema Form
+
+##### `GET` _/backend/schemas/request_
+
+Return the event request schema form.
+
+### Campaign General Schema Form
+
+##### `GET` _/backend/schemas/campaign/general_
+
+* `groupId`
+
+Return the campaign general schema form.
+
+### Campaign Targeting Schema Form
+
+##### `GET` _/backend/schemas/campaign/targeting_
+
+* `campaignId`
+
+Return the campaign targeting schema form.
+
+### Campaign Spend Schema Form
+
+##### `GET` _/backend/schemas/campaign/spend_
+
+Return the campaign spend schema form.
+
+### Group Schema Form
+
+##### `GET` _/backend/schemas/group_
+
+Return the group schema form.
+
