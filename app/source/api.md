@@ -2144,7 +2144,7 @@ All endpoints will have this format:
 
 Return the event request schema form.
 
-### Campaign General Schema Form
+### Campaign Schema Form
 
 ##### `GET` _/backend/schemas/campaign_
 
