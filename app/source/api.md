@@ -2146,25 +2146,12 @@ Return the event request schema form.
 
 ### Campaign General Schema Form
 
-##### `GET` _/backend/schemas/campaign/general_
+##### `GET` _/backend/schemas/campaign_
 
 * `groupId`
-
-Return the campaign general schema form.
-
-### Campaign Targeting Schema Form
-
-##### `GET` _/backend/schemas/campaign/targeting_
-
 * `campaignIds`
 
-Return the campaign targeting schema form.
-
-### Campaign Spend Schema Form
-
-##### `GET` _/backend/schemas/campaign/spend_
-
-Return the campaign spend schema form.
+Return the campaign schema form.
 
 ### Group Schema Form
 
