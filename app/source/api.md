@@ -1958,6 +1958,12 @@ Requests
 Filter results:
 * `type` - filter by `facebook` or `twitter`
 * `requestStatusId` - filter by `requestStatusId`
+* `campaignStatusId` - filter by `campaignStatusId`
+* `campaignTypeId` - filter by `campaignTypeId`
+* `searchTerm` - filter by `artist`, `venue`, or `marketer name`
+* `userGroupId` - filter by `user group`
+* `companyId` - filter by `company`
+* `withDeleted` - `true` includes deleted requests in response
 
 Request Status Ids:
 * 1 - `new`
@@ -1967,7 +1973,36 @@ Request Status Ids:
 * 5 - `complete`
 * 6 - `cancelled`
 
+Campaign Status Ids:
+* 1 - `campaign created` (Not Delivering)
+* 2 - `campaign active` (Delivering)
+* 3 - `campaign complete`
+
+Campaign Type Ids:
+* 1 - `Announcement`
+* 2 - `Presale`
+* 3 - `On Sale`
+* 4 - `Middle`
+* 5 - `Closing`
+* 6 - `Contest/Sweepstakes`
+* 7 - `Brand`
+
 Multiple ids may be passed: `?requestStatusId=1:3:6`
+
+Sort Results:
+* `orderBy` - column on which to sort results. defaults to `startDate`
+* `orderDirection` - `asc` or `desc`
+
+Order By Values:
+* `artistName` - Artist Name
+* `requestStatusId` - Status
+* `hasCreative` - Creative
+* `sfGuardUserProfile.lastName` - Marketer
+* `budget` - Budget
+* `createdAt` - Submitted Date
+* `startDate` - Start Date
+* `stopDate` - Stop Date
+* `eventDate` - Event Date
 
 Gets all the requests for a user
 
