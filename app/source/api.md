@@ -2261,3 +2261,118 @@ Return the campaign schema form.
 
 Return the group schema form.
 
+Twitter Campaigns
+=========
+
+Container for running ad campaigns on Twitter
+
+
+### Getting A Twitter Campaign
+
+##### `GET` _/twitter/campaigns/:id_
+
+###### Returns a campaign object.
+
+
+### Creating A Twitter Campaign
+
+##### `POST` _/twitter/campaigns_
+
+###### Returns a new campaign object.
+
+
+*Required Params*
+
+* `name`
+* `groupId`
+
+### Updating A Twitter Campaign
+
+##### `PUT` _/twitter/campaigns/:id_
+
+###### Returns an updated campaign object.
+
+
+### Deleting A Twitter Campaign
+
+##### `DELETE` _/twitter/campaigns/:id_
+
+###### 200 OK - "true"
+
+Twitter Campaigns
+=========
+
+Container for running ad campaigns on Twitter
+
+
+### Getting A Twitter Campaign
+
+##### `GET` _/twitter/campaigns/:id_
+
+###### Returns a campaign object.
+
+
+### Creating A Twitter Campaign
+
+##### `POST` _/twitter/campaigns_
+
+###### Returns a new campaign object.
+
+
+*Required Params*
+
+* `name`
+* `groupId`
+
+### Updating A Twitter Campaign
+
+##### `PUT` _/twitter/campaigns/:id_
+
+###### Returns an updated campaign object.
+
+
+### Deleting A Twitter Campaign
+
+##### `DELETE` _/twitter/campaigns/:id_
+
+###### 200 OK - "true"
+
+
+Twitter Line Items
+=========
+
+Container for line items in Twitter campaign
+
+
+### Getting A Twitter Line Item
+
+##### `GET` _/twitter/lineItems/:id_
+
+###### Returns a line item object.
+
+
+### Creating A Twitter Line Item
+
+##### `POST` _/twitter/lineItems_
+
+###### Returns a new line item object.
+
+
+*Required Params*
+
+* `name`
+* `campaignId`
+
+### Updating A Twitter Line Item
+
+##### `PUT` _/twitter/lineItems/:id_
+
+###### Returns an updated line item object.
+
+
+### Deleting A Twitter Line Item
+
+##### `DELETE` _/twitter/lineItem/:id_
+
+###### 200 OK - "true"
+
