@@ -304,6 +304,20 @@ _Note: may return a 400 error if the call to Facebook is not successful_
       "message": true
     }
 
+Twitter Ads Accounts
+------------
+
+##### `GET` _/socialAccounts/:id/twitterAdAccounts_
+
+###### Returns a list of Twitter ad account objects
+
+_Note: may return a 400 error if the call to Twitter is not successful_
+
+
+##### `GET` _/socialAccounts/:id/twitterAdAccounts/:adsAccountId/fundingInstriuments_
+
+###### Returns list of funding instruments for the specified Twitter add acount
+
 
 Offsite Tracking Pixels
 -----------------------
@@ -403,6 +417,59 @@ You may not delete groups that already contain campaigns. You will receive the f
 ##### `GET` _/groups_
 
 ###### Returns an array of JSON group objects.
+
+Twitter Groups
+======
+
+A container for grouping multiple campaigns together.
+
+
+### Getting A Twitter Group
+
+##### `GET` _/twitter/groups/:id_
+
+###### Returns a group object.
+
+
+### Creating A Twitter Group
+
+##### `POST` _/twitter/groups_
+
+*Required Params*
+
+* `name`    - a name for your group
+* `socialAccountId` - Citizennet social account 
+* `accountId` - Twitter Ad Account
+* `fundingInstrumentId` - Twitter Funding Instrument
+
+*Optional Params*
+
+* `budget`  - a maximum budget for all campaigns in a group
+* `admin`   - an array of other options
+
+###### A new JSON group object
+
+
+### Updating A Twitter Group
+
+##### `PUT` _/twitter/groups/:id_
+
+###### Returns the updated JSON group object.
+
+
+### Getting All Campaigns In A Twitter Group
+
+##### `GET` _/twitter/groups/:id/campaigns_
+
+###### Returns a list of all campaigns for a group.
+
+
+### Getting All Groups For A Company
+
+##### `GET` _/twitter/groups_
+
+###### Returns an array of JSON group objects.
+
 
 
 Query Params
