@@ -1100,7 +1100,6 @@ Targeting Groups
 ###### 200 OK - "Targeting group deleted"
 
 
-<<<<<<< Updated upstream
 ### Duplicating A Targeting Group
 
 ##### `POST` _/targeting/targetingGroups/:id/duplicate_
@@ -1110,13 +1109,12 @@ Targeting Groups
 
 ### Copying A Targeting Group to Campaign(s)
 
-##### `GET` _/targeting/targetingGroups/:id/moveToCampaigns/:comma-delimited-campaign-ids
+##### `GET` _/targeting/targetingGroups/:id/moveToCampaigns/:comma-delimited-campaign-ids_
 
 ###### 200 OK - (e.g.) "Importing targeting_group.id: 123456 to these campaigns: 789101,789102; _targeting group name_ to targeting_group.id 123457,_targeting group name_ to targeting_group.id 123458,"
 
 
-=======
->>>>>>> Stashed changes
+
 ### Getting Targeting for a Group
 
 ##### `GET` _/groups/:id/targetings_
