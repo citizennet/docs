@@ -687,14 +687,14 @@ Campaign Tags
 `tags` - list of tag objects. This will replace any existing tags.
 
 * `id` - Id of the tag (if not provided, a new tag will be created)
-* `tagName` - Name of the tag
+* `name` - Name of the tag
 
 Example:
 
     "tags": [
       {
         "id": 12345
-        "tagName": "My Tag Name"
+        "name": "My Tag Name"
       }
     ]
 
