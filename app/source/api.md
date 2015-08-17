@@ -304,6 +304,20 @@ _Note: may return a 400 error if the call to Facebook is not successful_
       "message": true
     }
 
+Twitter Ads Accounts
+------------
+
+##### `GET` _/socialAccounts/:id/twitterAdAccounts_
+
+###### Returns a list of Twitter ad account objects
+
+_Note: may return a 400 error if the call to Twitter is not successful_
+
+
+##### `GET` _/socialAccounts/:id/twitterAdAccounts/:adsAccountId/fundingInstriuments_
+
+###### Returns list of funding instruments for the specified Twitter add acount
+
 
 Offsite Tracking Pixels
 -----------------------
@@ -403,6 +417,59 @@ You may not delete groups that already contain campaigns. You will receive the f
 ##### `GET` _/groups_
 
 ###### Returns an array of JSON group objects.
+
+Twitter Groups
+======
+
+A container for grouping multiple campaigns together.
+
+
+### Getting A Twitter Group
+
+##### `GET` _/twitter/groups/:id_
+
+###### Returns a group object.
+
+
+### Creating A Twitter Group
+
+##### `POST` _/twitter/groups_
+
+*Required Params*
+
+* `name`    - a name for your group
+* `socialAccountId` - Citizennet social account 
+* `accountId` - Twitter Ad Account
+* `fundingInstrumentId` - Twitter Funding Instrument
+
+*Optional Params*
+
+* `budget`  - a maximum budget for all campaigns in a group
+* `admin`   - an array of other options
+
+###### A new JSON group object
+
+
+### Updating A Twitter Group
+
+##### `PUT` _/twitter/groups/:id_
+
+###### Returns the updated JSON group object.
+
+
+### Getting All Campaigns In A Twitter Group
+
+##### `GET` _/twitter/groups/:id/campaigns_
+
+###### Returns a list of all campaigns for a group.
+
+
+### Getting All Groups For A Company
+
+##### `GET` _/twitter/groups_
+
+###### Returns an array of JSON group objects.
+
 
 
 Query Params
@@ -1033,7 +1100,6 @@ Targeting Groups
 ###### 200 OK - "Targeting group deleted"
 
 
-<<<<<<< Updated upstream
 ### Duplicating A Targeting Group
 
 ##### `POST` _/targeting/targetingGroups/:id/duplicate_
@@ -1043,13 +1109,12 @@ Targeting Groups
 
 ### Copying A Targeting Group to Campaign(s)
 
-##### `GET` _/targeting/targetingGroups/:id/moveToCampaigns/:comma-delimited-campaign-ids
+##### `GET` _/targeting/targetingGroups/:id/moveToCampaigns/:comma-delimited-campaign-ids_
 
 ###### 200 OK - (e.g.) "Importing targeting_group.id: 123456 to these campaigns: 789101,789102; _targeting group name_ to targeting_group.id 123457,_targeting group name_ to targeting_group.id 123458,"
 
 
-=======
->>>>>>> Stashed changes
+
 ### Getting Targeting for a Group
 
 ##### `GET` _/groups/:id/targetings_
@@ -2193,4 +2258,119 @@ Return the campaign schema form.
 ##### `GET` _/backend/schemas/group_
 
 Return the group schema form.
+
+Twitter Campaigns
+=========
+
+Container for running ad campaigns on Twitter
+
+
+### Getting A Twitter Campaign
+
+##### `GET` _/twitter/campaigns/:id_
+
+###### Returns a campaign object.
+
+
+### Creating A Twitter Campaign
+
+##### `POST` _/twitter/campaigns_
+
+###### Returns a new campaign object.
+
+
+*Required Params*
+
+* `name`
+* `groupId`
+
+### Updating A Twitter Campaign
+
+##### `PUT` _/twitter/campaigns/:id_
+
+###### Returns an updated campaign object.
+
+
+### Deleting A Twitter Campaign
+
+##### `DELETE` _/twitter/campaigns/:id_
+
+###### 200 OK - "true"
+
+Twitter Campaigns
+=========
+
+Container for running ad campaigns on Twitter
+
+
+### Getting A Twitter Campaign
+
+##### `GET` _/twitter/campaigns/:id_
+
+###### Returns a campaign object.
+
+
+### Creating A Twitter Campaign
+
+##### `POST` _/twitter/campaigns_
+
+###### Returns a new campaign object.
+
+
+*Required Params*
+
+* `name`
+* `groupId`
+
+### Updating A Twitter Campaign
+
+##### `PUT` _/twitter/campaigns/:id_
+
+###### Returns an updated campaign object.
+
+
+### Deleting A Twitter Campaign
+
+##### `DELETE` _/twitter/campaigns/:id_
+
+###### 200 OK - "true"
+
+
+Twitter Line Items
+=========
+
+Container for line items in Twitter campaign
+
+
+### Getting A Twitter Line Item
+
+##### `GET` _/twitter/lineItems/:id_
+
+###### Returns a line item object.
+
+
+### Creating A Twitter Line Item
+
+##### `POST` _/twitter/lineItems_
+
+###### Returns a new line item object.
+
+
+*Required Params*
+
+* `name`
+* `campaignId`
+
+### Updating A Twitter Line Item
+
+##### `PUT` _/twitter/lineItems/:id_
+
+###### Returns an updated line item object.
+
+
+### Deleting A Twitter Line Item
+
+##### `DELETE` _/twitter/lineItem/:id_
+
+###### 200 OK - "true"
 
