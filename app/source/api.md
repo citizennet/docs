@@ -233,7 +233,7 @@ Top level container for all Facebook ad products
 | **Monthly**                                | 1 invoice per group | 1 invoice per company |
 |--------------------------------------------|---------------------|-----------------------|
 | **full spend of campaign ending in month** | `2`                 | `5`                   |
-| **spend of campaigns within month**        | `3`                 | `4`                   |
+| **spend of campaigns within month**        | `3`, `6` (one line item only)                 | `4`                   |
 
 
 
