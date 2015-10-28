@@ -2336,3 +2336,33 @@ Container for line items in Twitter campaign
 
 ###### 200 OK - "true"
 
+Twitter Autocomplete
+====================
+
+### Get Twitter targeting categories
+
+###### Query string options are passed to twitter
+
+##### `GET` _/twitter/targeting/categories_
+
+###### https://dev.twitter.com/ads/reference/get/targeting_criteria/interests
+
+##### `GET` _/twitter/targeting/locales_
+
+###### https://dev.twitter.com/ads/reference/get/targeting_criteria/languages
+
+##### `GET` _/twitter/targeting/adgeolocation_
+
+###### https://dev.twitter.com/ads/reference/get/targeting_criteria/locations
+
+### Get Twitter account custom audiences
+
+##### `GET` _/socialAccounts/:id/twitterAdAccounts/:adsAccountId/targeting/customAudiences_
+
+###### https://dev.twitter.com/ads/reference/get/accounts/%3Aaccount_id/tailored_audiences
+
+##### `GET` _/socialAccounts/:id/twitterAdAccounts/:adsAccountId/targeting/reachEstimate_
+
+###### https://dev.twitter.com/ads/reference/get/accounts/%3Aaccount_id/reach_estimate
+###### Query string options are passed to Twitter
+
