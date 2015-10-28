@@ -2297,44 +2297,6 @@ Container for running ad campaigns on Twitter
 
 ###### 200 OK - "true"
 
-Twitter Campaigns
-=========
-
-Container for running ad campaigns on Twitter
-
-
-### Getting A Twitter Campaign
-
-##### `GET` _/twitter/campaigns/:id_
-
-###### Returns a campaign object.
-
-
-### Creating A Twitter Campaign
-
-##### `POST` _/twitter/campaigns_
-
-###### Returns a new campaign object.
-
-
-*Required Params*
-
-* `name`
-* `groupId`
-
-### Updating A Twitter Campaign
-
-##### `PUT` _/twitter/campaigns/:id_
-
-###### Returns an updated campaign object.
-
-
-### Deleting A Twitter Campaign
-
-##### `DELETE` _/twitter/campaigns/:id_
-
-###### 200 OK - "true"
-
 
 Twitter Line Items
 =========
