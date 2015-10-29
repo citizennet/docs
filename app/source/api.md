@@ -2366,3 +2366,6 @@ Twitter Autocomplete
 ###### https://dev.twitter.com/ads/reference/get/accounts/%3Aaccount_id/reach_estimate
 ###### Query string options are passed to Twitter
 
+##### `GET` _/twitter/groups/:groupid/targeting/:targetingtype_
+
+######  convenience wrapper for above endpoints
