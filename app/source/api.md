@@ -2369,3 +2369,32 @@ Twitter Autocomplete
 ##### `GET` _/twitter/groups/:groupid/targeting/:targetingtype_
 
 ######  convenience wrapper for above endpoints
+
+Children Counts
+===============
+
+### Get the count of child elements within a container
+e.g. the number of campaigns in a group, the number of ad sets in a list of campaigns, etc.
+
+#### Twitter
+##### `GET` _/twitter/childrenCounts
+
+#### Facebook
+##### `GET` _/groups/childrenCounts
+
+Query String Parameters
+-----------------------
+
+*Required*
+* `groupId`
+
+*Optional*
+* `campaignId` - a colon delimited list of campaign ids
+* `adSetId` - a colon delimited list of ad set ids
+
+###### Returns a JSON object in the format:
+    {
+      "campaigns": 10,
+      "adSets": 24,
+      "ads": 45
+    }
