@@ -554,10 +554,175 @@ Optional :
 
 Required :
 
-* `campaignId` or `socialAccountId` and `accountId` 
+* `campaignId` or `groupId` or `socialAccountId` and `accountId` 
 
 Optional :
 
 * Supports pagination
 
 ###### Returns the Tweet along with a preview.
+
+
+Cards 
+======
+
+Cards are additional creative information that can be applied to an existing or new tweet.
+
+### Get a list of Cards
+
+This call fetches latest cards twitter cards from  twitters undocumented `https://ads.twitter.com/accounts/:account_id/cards/cardsList.json` endpoint , saves the cards in the db and returns the list of formatted cards.
+
+#### `GET` _/twitter/cards_
+
+Required :
+
+* `campaignId` or `groupId` or `socialAccountId` and `accountId`
+
+Note : Specifying campaignId will additionally filter cards based on campaign objective.
+
+##### Returns a list of cards :
+
+	[
+	  {
+	    "twCardId": "1ej65",
+	    "cardType": "website",
+	    "twitterObject": {
+	      "name": "Test website card",
+	      "previewUrl": "https://cards.twitter.com/cards/18ce53wgm4r/1ej65",
+	      "deleted": false,
+	      "websiteCta": "READ_MORE",
+	      "createdAt": "2016-01-26T22:47:46Z",
+	      "websiteUrl": "http://citizennet.com",
+	      "cardType": "WEBSITE",
+	      "updatedAt": "2016-01-26T22:47:46Z",
+	      "id": "1ej65",
+	      "websiteTitle": "Just a test",
+	      "accountId": "18ce53wgm4r",
+	      "image": "https://pbs.twimg.com/media-preview/692116742487855104/UUlOuNuK.jpg"
+	    },
+	    "updatedAt": "2016-01-26 14:47:46",
+	    "id": 11,
+	    "createdAt": "2016-01-26 14:47:46",
+	    "accountId": "18ce53wgm4r"
+	  },
+	  {...}
+	]
+
+
+### Delete a Card
+
+#### `DELETE` _/twitter/cards/:card_id_
+
+Required :
+
+* `cardId` : The Citizennet Id of the twitter card.
+* `campaignId` or `groupId` or `socialAccountId` and `accountId`
+
+### Returns 200 
+	{
+	"message" : "Card :card_id successfully deleted"
+	} 
+
+Twitter Media
+=============
+Files supported :
+* `png`
+* `jpg`
+* `jpeg`
+* `gif`
+* `mp4` ( video )
+* `bmp`
+* `webp`
+
+## Upload
+
+Upload media to twitter . 
+
+#### `POST` _/twitter/media/upload_
+
+Accepts form data.
+
+Required :
+
+* `file` : The actual file to upload
+* `campaignId` or `groupId` or `socialAccountId` and `accountId`
+
+##### Returns
+
+	{
+	"media_id" : 324256464565676575675,
+	"media_id_string" : "324256464565676575675",
+	"cn_preview_url" : "https://citizennt.com/uploads/twitter/F7thsabk9hg.jpg"
+	}
+
+ * `media_id_string` : The twitter media id that can be used in the tweet.
+ * `cn_preview_url` : Preview Url for the content uploaded on CitizenNet.
+
+### Check Status of Media Id 
+
+#### `GET` _/twitter/media/:media_id_
+
+The endpoint can be used to poll the media ids and check if the media is servable.
+
+Required :
+
+* `media_id` : The media id returned from the upload endpoint.
+* `campaignId` or `groupId` or `socialAccountId` and `accountId`
+
+##### Returns :
+
+	{ 
+ 	"ready_to_tweet" : true,
+ 	"reasons_not_servable" : []
+ 	}	
+ 
+## Videos
+
+### Get video list
+
+Get list of videos for the account
+ 
+#### `GET` _/twitter/media/videos_
+ 
+ Required :
+ 
+ * `campaignId` or `groupId` or `socialAccountId` and `accountId`
+ 
+##### Returns a list of videos
+
+	[
+	  {
+	    "ready_to_tweet": true,
+	    "description": "",
+	    "title": "Slack for iOS Upload.mp4",
+	    "deleted": false,
+	    "created_at": "2016-02-03T20:20:43Z",
+	    "media_id_string": "21ea3ccd-b344-45fb-a93f-5e74689db2b1",
+	    "reasons_not_servable": [],
+	    "preview_url": "https://amp.twimg.com/prod/multibr_v_1/video/2016/02/03/20/21ea3ccd-b344-45fb-a93f-5e74689db2b1-libx264-baseline-2528k.mp4?yJ8NPlOh90JYiSOlqDSJOHo1v%2B1whQRhjsse9OKo87w%3D",
+	    "updated_at": "2016-02-03T20:22:39Z",
+	    "duration": 12190,
+	    "tweeted": true
+	  },
+	  { ... 
+	  }
+	]
+
+### Check Status of Video Id 
+
+#### `GET` _/twitter/media/videos/:video_id
+
+The endpoint can be used to poll the video ids and check if the vido is servable.
+
+Required :
+
+* `video_id` : The media id returned from the upload endpoint.
+* `campaignId` or `groupId` or `socialAccountId` and `accountId`
+
+##### Returns :
+
+	{ 
+ 	"ready_to_tweet" : true,
+ 	"reasons_not_servable" : []
+ 	}	
+ 
