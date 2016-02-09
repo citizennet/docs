@@ -726,3 +726,60 @@ Required :
  	"reasons_not_servable" : []
  	}	
  
+Error Messages 
+==============
+
+Twitter error messages can be related to the following object types :
+* `campaigns` - Twitter Campaigns 
+* `lineItems` - Twitter Line Items
+* `ads` - Twitter Ads
+* `groups` - Twitter Groups
+
+### Get Error Messages
+
+#### `GET` _/twitter/errorMessages/:object_type/:object_id_
+
+Required :
+* `object_type` must be one the valid object types specified 
+
+##### Returns all non deleted error messages associated with the object
+
+	[
+	  {
+	    "userError": 0,
+	    "description": "Test Error by fire be purged ",
+	    "campaignId": 111089,
+	    "groupId": 148563,
+	    "adId": null,
+	    "errorDescId": 6197,
+	    "lineItemId": 283106,
+	    "deletedAt": null,
+	    "id": 5,
+	    "createdAt": "2016-02-09 08:39:27"
+	  },
+	  {...}
+	]
+
+### Delete All Error Messages
+
+Deletes all error messages for the specified object.
+
+#### `DELETE` _/twitter/errorMessages/:object_type/:object_id_
+
+Required :
+* `object_type` - must be one the valid object types specified 
+* `object_id` - must be a valid id for indicated object.
+
+##### Returns 200 - True
+
+### Delete Single Error Message
+
+Deletes the specified error message id.
+
+#### `DELETE` _/twitter/errorMessages/:error_id_
+
+Required :
+* `error_id` - must be a valid id error id.
+
+##### Returns 200 - True
+
