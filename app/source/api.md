@@ -638,6 +638,17 @@ Return sub campaign data along with campaign data.
 ###### Returns a list of all sub campaigns for a campaign.
 
 
+### Auditing A Campaign's Setup On Facebook
+
+##### `GET` _/campaigns/:id/audit_
+
+###### Returns a campaign object as returned from Facebook's API.
+
+*Optional Params*
+
+* `fields` - Comma-separated list of fields on the Facebook campaign object. The full list can be found [here](https://developers.facebook.com/docs/marketing-api/reference/ad-campaign-group#Reading).
+
+
 Query Parameters
 ----------------
 
@@ -838,10 +849,10 @@ Example:
 * `version`  - version to migrate campaign to (defaults to newest version)
     
     
-Sub Campaigns
-=============
+Sub Campaigns/Ad Sets
+=====================
 
-A container for programmatically sub-grouping campaigns
+Referred to as Sub Campaigns for historical reasons, since this pre-dates Facebook's addition of the adset level in their campaigns structure.
 
 
 ### Getting A Sub Campaign
@@ -954,6 +965,15 @@ Get the current delivery status of all the ads in a sub campaign
       ...
     }
 
+### Auditing A Sub Campaign's Setup On Facebook
+
+##### `GET` _/subCampaigns/:id/audit_
+
+###### Returns an adset object as returned from Facebook's API.
+
+*Optional Params*
+
+* `fields` - Comma-separated list of fields on the Facebook adset object. The full list can be found [here](https://developers.facebook.com/docs/marketing-api/reference/ad-campaign#Reading).
 
 Creatives
 =========
@@ -1029,6 +1049,17 @@ Query Params
 ### Getting Preview By Hash
 
 Pass `?fromHash=true` to lookup a preview by its hash value
+
+
+### Auditing The Facebook Page Post Used For A Creative
+
+##### `GET` _/creatives/:id/audit_
+
+###### Returns a page post object as returned from Facebook's API.
+
+*Optional Params*
+
+* `fields` - Comma-separated list of fields on the Facebook page post object.
 
 
 Targeting
@@ -1446,6 +1477,17 @@ Multiple Ads
 ##### `GET` _/subCampaigns/:id/ads_
 
 ###### Returns a list of ad objects
+
+
+### Auditing An Ad's Setup On Facebook
+
+##### `GET` _/ads/:id/audit_
+
+###### Returns an ad object as returned from Facebook's API.
+
+*Optional Params*
+
+* `fields` - Comma-separated list of fields on the Facebook ad object. The full list can be found [here](https://developers.facebook.com/docs/marketing-api/reference/adgroup#Reading).
 
 
 Notifications
