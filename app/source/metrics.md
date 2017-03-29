@@ -88,5 +88,9 @@ _expired_ | All (appears broken)
  * Data lines corresponding, one for each unique set of dimensions
  * List and Object data JSON-formatted
 
+### Headers
+
+ * `X-CN-Timestamp` _Timestamp_ When stats fetched
+
 ### Notes
  * Timestamps are in milliseconds since epoch
