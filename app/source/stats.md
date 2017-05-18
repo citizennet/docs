@@ -79,70 +79,6 @@ The results will be returned as an array of results, in the order requested in t
 
 
 
-
-
-# Metrics API
-
-    https://citizennet.com/api/metrics
-
-The Metrics API is a wrapper around the Stats API, merging results and
-returning data in a CSV format.
-
-##Groups
-Comma-separated list of groups to query
-
-    ?group_id=1,2,3
-
-##IDs
-Comma-separated list of metrics to query.  Can add `_change_7` to get percentage change over specified days.
-
-    ?ids=23,34,56
-
-##Dimensions
-Comma-separated list of metrics used for grouping
-
-    ?dimension=56,46,345
-
-##Date Range
-Epoch Seconds
-
-    ?start_date=1388707246&stop_date=1389916834
-
-##Update Data
-Re-query to the source (Facebook, etc.) for the latest data.  This is slow
-
-    ?update=1
-
-##Refresh Cache
-Update the existing Metrics API intermediate cache with Citizennet's latest additional data
-
-    ?refreshcache=1
-
-
-##Clear Cache
-Wipe out the Metcrics API intermediate cache and return Citizennet's newest copy of the data from Stats API
-
-    ?clearcache=1
-
-##Filling empty dimensions
-For smaller results, dimensions without data will not be auto-filled
-
-    ?nofill=1
-
-##Pre-Cache
-To warm the cache for future requests
-
-    ?precache=1
-
-##Human
-Return named column headers and human-readable dates
-
-    ?human=1
-
-
-
-
-
 # Query String Parameters
 
 ## Limit
@@ -194,7 +130,7 @@ Returns a specific subset of stats that includes only the fields specified.  If 
 ## Filter
 Filter results by appling an operator and value to specific field in each
 row.  Format is `field:operator:value`.  Operators can be `eq, ne, gt, gte,
-ge, lt, lte, le` on numeric values, `strin` on string values, or `allremove` and `anyremove`, which are JSON-encoded lists removing entries that match all or any of the listed values.  Multiple
+ge, lt, lte, le` on numeric values, `strin` on string values, or `allremove`, `anyremove` and `onlyinclude`, which are JSON-encoded lists removing entries that match all, or any of the listed values.  Multiple
 filter values will all be used.
 
     ?filter=impressions:gt:3000
