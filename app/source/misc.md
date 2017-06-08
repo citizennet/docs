@@ -289,4 +289,35 @@ in the format:
        "status" : "OK"
     }
 
+## Reach Estimates for the Influencer Tool
+
+    https://citizennet.com/api/v2/backend/audienceReach
+
+GET
+
+*Required Params (one of the following must be specified in the call)*
+
+* `keyword`  - If no other parameters are passed in, all reach in the US for a keyword will be returned
+* `fbpages` - If no other parameters are passed in, all reach in the US for the facebook page will be returned
+
+*Optional Params (any combination of the following params may be passed in, along with one of the required params)*
+
+* `gender`   - Reach will be limited by gender (options are `male` and `female`)
+* `age`  - Reach will be limited to the specified age range
+* `countries` - Reach will be limited to specified list of two letter country codes. If not specified, the default will be set to `US`. 
+* `languages` - Reach will be limited based on the specified languages, written out in English
+
+*Example Call (this will return the reach for the keyword "Superman" for males between the ages of 20 and 35 that speak Spanish in the US and UK)*
+
+    GET https://citizennet.com/api/v2/backend/audienceReach?keyword=superman&gender=male&age=20-35&languages=Spanish&countries=US,GB
+
+*Response*
+
+    {
+      "reach": 94000, 
+      "reach_percentage": 0.08545454545454545
+    }
+
+
+
 For more detailed information, visit the documentation at https://developers.google.com/places/web-service/details
