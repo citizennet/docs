@@ -318,6 +318,72 @@ GET
       "reach_percentage": 0.08545454545454545
     }
 
+BATCH CALLS for Audience Reach
 
+    https://citizennet.com/api/v2/batch
+
+POST
+
+*Post Data*
+
+* `batch` - Specify this key with an array of objects that contain the audienceReach endpoint and params
+
+*Objects to Specify inside `batch` key*
+
+* `endpoint` - The URL for the endpoint with the params you would like data on
+* `method` - For the audienceReach endpoint, this should always be set to `GET`
+* `id` - This can be any string of characters. It will be returned with the response to indicate which call yields which results
+
+*Example Batch Call (this will return the total reach for the facebook page "Superman" as well as the data broken down by gender)*
+
+  POST https://citizennet.com/api/v2/batch
+
+  Post Data:
+
+    {
+      "batch": [
+        {
+          "id":"superman",
+          "endpoint":"backend/audienceReach?fbpage=superman&access_token=:access_token”,
+          ”method":"GET"
+        },
+        {
+          "id":"male",
+          "endpoint":"backend/audienceReach?fbpage=superman&gender=male&access_token=:access_token”,
+          ”method":"GET"
+        },
+        {
+          "id":"female",
+          "endpoint":"backend/audienceReach?fbpage=superman&gender=male&access_token=:access_token”,
+          ”method":"GET"
+        }
+      ]
+    }
+
+*Example Results*
+
+    [
+        {
+            "status": 200,
+            "body": {
+                "reach": 1100000
+            },
+            "id": "superman"
+        },
+        {
+            "status": 200,
+            "body": {
+                "reach": 820000
+            },
+            "id": "male"
+        },
+        {
+            "status": 200,
+            "body": {
+                "reach": 290000
+            },
+            "id": "female"
+        }
+    ]
 
 For more detailed information, visit the documentation at https://developers.google.com/places/web-service/details
