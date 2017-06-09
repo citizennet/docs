@@ -318,7 +318,7 @@ GET
       "reach_percentage": 0.08545454545454545
     }
 
-### BATCH CALLS for Audience Reach
+### Batch Calls for Reach Estimates
 
     https://citizennet.com/api/v2/batch
 
