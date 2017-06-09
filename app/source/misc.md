@@ -318,7 +318,7 @@ GET
       "reach_percentage": 0.08545454545454545
     }
 
-BATCH CALLS for Audience Reach
+###BATCH CALLS for Audience Reach
 
     https://citizennet.com/api/v2/batch
 
@@ -336,7 +336,7 @@ POST
 
 *Example Batch Call (this will return the total reach for the facebook page "Superman" as well as the data broken down by gender)*
 
-  POST https://citizennet.com/api/v2/batch
+    POST https://citizennet.com/api/v2/batch
 
   Post Data:
 
