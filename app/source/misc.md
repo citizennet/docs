@@ -288,3 +288,5 @@ in the format:
        },
        "status" : "OK"
     }
+
+For more detailed information, visit the documentation at https://developers.google.com/places/web-service/details
