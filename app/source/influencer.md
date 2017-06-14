@@ -101,7 +101,7 @@ Post Data:
 }
 ```
 
-*Example Results*
+*Example Response*
 
 ```
 [
