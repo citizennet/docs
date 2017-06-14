@@ -94,7 +94,7 @@ Post Data:
     },
     {
       "id":"female",
-      "endpoint":"backend/audienceReach?fbpage=superman&gender=male&access_token=:access_token”,
+      "endpoint":"backend/audienceReach?fbpage=superman&gender=female&access_token=:access_token”,
       ”method":"GET"
     }
   ]
