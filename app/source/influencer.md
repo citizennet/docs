@@ -138,7 +138,7 @@ GET/POST https://citizennet.com/api/v2/backend/influencerStats
 
 This endpoint will return stats on a list of influencers, optionally compared against a _core_.
 
-# JSON interface
+### JSON interface
 
 The input should be a json object.  Output will be a list of objects.
 
@@ -154,7 +154,7 @@ The input should be a json object.  Output will be a list of objects.
 * `age` - Applies to all stats
 * `gender` - Applies to all stats
 
-# CSV interface
+### CSV interface
 
 Lists are comma-separated, output will be in CSV
 
