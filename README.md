@@ -5,3 +5,4 @@
 * [Metrics API](https://github.com/citizennet/docs/blob/master/app/source/metrics.md)
 * [Miscellaneous API](https://github.com/citizennet/docs/blob/master/app/source/misc.md)
 * [Influencer API](https://github.com/citizennet/docs/blob/master/app/source/influencer.md)
+* [Python Style Guide](https://github.com/citizennet/docs/blob/master/app/source/python_style.md)
