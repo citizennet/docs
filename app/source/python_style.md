@@ -5,7 +5,7 @@ https://www.python.org/dev/peps/pep-0008/
 * Cmd + Shift + P to bring up the Command Palette
 * Click `Package Control: Install Package`
 * Search for `Anaconda` and click to install
-* Make the following modification to `Sublime Text -> Preferences -> Package Settings -> Anaconda -> Settings - User`
+* Make the following modifications to `Sublime Text -> Preferences -> Package Settings -> Anaconda -> Settings - User`
 ```
 {
     "pep8_max_line_length": 100,
