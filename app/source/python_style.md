@@ -30,7 +30,8 @@ class TableEnum():
         VALUE3 = "VALUE3"
 ```
 ## Line Breaks
-* When breaking lines in function params, strings, and objects use 1 indent each line
+* When breaking lines in function params, strings, and objects use one indent each line
+* Function params and conditional expression clauses should either be all on one line or if too long separated one on each line
 ```
 res = function(
     var1,
