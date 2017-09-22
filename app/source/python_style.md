@@ -10,13 +10,15 @@ https://www.python.org/dev/peps/pep-0008/
 {
     "pep8_max_line_length": 100,
     "pep8_ignore": [
-        "E402"
+        "E402",
+        "W503"
     ],
     "auto_formatting_timeout": 5
 }
 ```
 * Line length increased to 100 from the default of 79 which is still PEP 8 acceptable
 * Ignore imports not at the top of the file to allow for adding to the import path
+* Ignore line break occurred before a binary operator error because it contradicts the PEP 8 guide
 * Need to increase auto formatting timeout for it to work
 
 ## Enumerated Fields
