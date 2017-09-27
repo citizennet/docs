@@ -61,6 +61,7 @@ obj = {
 
 ### API
 * Use `raise CNException("An error occurred", status_code)` for sending errors in an API endpoint
+* Data input and output should be in snake_case
 
 ### Flex Forms
 * When modifying schema fields, use:
