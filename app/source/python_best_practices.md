@@ -33,6 +33,7 @@ class TableEnum():
         VALUE2 = "VALUE2"
         VALUE3 = "VALUE3"
 ```
+
 ### Line Breaks
 * When breaking lines in function params, strings, and objects use one indent each line
 * Function params and conditional expression clauses should either be all on one line or separated one on each line
@@ -54,4 +55,53 @@ obj = {
     "field2": "value2",
     "field3": "value3"
 }
+```
+
+# Standards
+
+### API
+* Use `raise CNException("An error occurred", status_code)` for sending errors in an API endpoint
+
+### Flex Forms
+* When modifying schema fields, use:
+```
+helpers.set_schema_field(
+    payload,
+    ["key1", "key2", "key3"],
+    value
+)
+```
+* When modifying form fields, use:
+```
+form_modifications = [
+    {
+        "predicate": lambda item: (
+            item.get("key") == "Key"
+            and cond
+        ),
+        "operation": lambda item: func(item)
+    },
+    {
+        "predicate": lambda item: (
+            item.get("title") == "Title"
+            and item.get("type") == "component"
+        ),
+        "operation": helpers.set_field(
+            "condition",
+            "false"
+        )
+    }
+]
+payload.change_many_form_values(form_modifications)
+```
+* When setting diff fields, use:
+```
+diff_fields = {
+    "type": {
+        "schema": ["schema1", "schema2"],
+        "data": ["data1", "data2"],
+        "form": ["form1", "form2"]
+    }
+}
+helpers.set_diff(payload, update_schema, diff_fields, in_place=True)
 ```
