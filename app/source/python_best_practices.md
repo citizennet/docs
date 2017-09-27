@@ -1,7 +1,7 @@
-## PEP 8
+### PEP 8
 https://www.python.org/dev/peps/pep-0008/
 
-## Anaconda for Sublime Text
+### Anaconda for Sublime Text
 * Cmd + Shift + P to bring up the Command Palette
 * Click `Package Control: Install Package`
 * Search for `Anaconda` and click to install
@@ -21,7 +21,7 @@ https://www.python.org/dev/peps/pep-0008/
 * Ignore line break occurred before a binary operator error because it contradicts the PEP 8 guide
 * Need to increase auto formatting timeout for it to work
 
-## Enumerated Fields
+### Enumerated Fields
 * If new values will be added frequently, create a new table holding all values for the field and link it with a foreign key. Otherwise, just store the value directly.
 * Use `py/cnenums.py` to create variables for all field values and refer to the values using the variables in code.
 ```
@@ -31,7 +31,7 @@ class TableEnum():
         VALUE2 = "VALUE2"
         VALUE3 = "VALUE3"
 ```
-## Line Breaks
+### Line Breaks
 * When breaking lines in function params, strings, and objects use one indent each line
 * Function params and conditional expression clauses should either be all on one line or separated one on each line
 ```
