@@ -56,6 +56,12 @@ obj = {
     "field3": "value3"
 }
 ```
+* Line breaks in conditional expressions should be double indented so it doesn't line up with the body
+```
+if (this_is_one_thing
+        and that_is_another_thing):
+    do_something()
+```
 
 # Standards
 
