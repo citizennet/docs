@@ -18,6 +18,10 @@ Requests to the CitizenNet API should always be made via an https request.
 
 `https://citizennet.com/api/v2/...`
 
+### Rate Limits
+
+Make only 1 request at a time, no more than 1 per second.
+
 
 ## Reach Estimates
 
