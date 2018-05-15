@@ -44,6 +44,13 @@ res = function(
     var3
 )
 
+def long_function_name(
+        var_one,
+        var_two,
+        var_three,
+        var_four):
+    print(var_one)
+
 string = (
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
     "Sed non erat id elit porta finibus eget a elit. "
