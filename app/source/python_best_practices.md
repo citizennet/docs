@@ -48,7 +48,7 @@ def long_function_name(
         var_one,
         var_two,
         var_three):
-    print(var_one)
+    print var_one
 
 string = (
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
